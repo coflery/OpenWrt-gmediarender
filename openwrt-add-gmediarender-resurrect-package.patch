@@ -20,13 +20,13 @@ index 0000000..696730e
 +include $(TOPDIR)/rules.mk
 +
 +PKG_NAME:=gmediarender
-+PKG_VERSION:=2013-12-04
++PKG_VERSION:=2013-11-28
 +PKG_RELEASE=$(PKG_SOURCE_VERSION)
 +
 +PKG_SOURCE_PROTO:=git
-+PKG_SOURCE_URL:=git@github.com:hzeller/gmrender-resurrect.git
++PKG_SOURCE_URL:=git@github.com:coflery/gmrender-resurrect-openhome.git
 +PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
-+PKG_SOURCE_VERSION:=e2eb7852eebea95c69c79c43a1e4d5f52409930f
++PKG_SOURCE_VERSION:=201ef4546a4dbf8d99ece0cb8f9883e401fc482c
 +PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 +
 +PKG_FIXUP:=autoreconf
