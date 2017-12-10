@@ -1,15 +1,82 @@
-commit f1197142d0d4e6df35832ab2847ffa06030f2693
-Author: JiapengLi <gapleehit@gmail.com>
-Date:   Fri Dec 6 13:26:56 2013 +0800
-
-    Add gmediarender-resurrect to OpenWrt
-
-diff --git a/multimedia/gmediarender/Makefile b/multimedia/gmediarender/Makefile
-new file mode 100644
-index 0000000..696730e
---- /dev/null
-+++ b/multimedia/gmediarender/Makefile
-@@ -0,0 +1,51 @@
+// gmrender.patch 文件
+--- /dev/null	2014-10-09 15:03:28.117439574 +0800
++++ feeds/packages/multimedia/gmediarender/files/gmediarender.config	2014-10-15 11:09:43.520258640 +0800
+@@ -0,0 +1,7 @@
++config gmediarender 'core'
++	option enabled '1'
++	option name 'OpenWrtRender'
++	option mixer 'Speaker'
++	option mixervolume '80%'
++	option rendervolume '-10'
++	option alsadevice 'sysdefault'
+--- /dev/null	2014-10-09 15:03:28.117439574 +0800
++++ feeds/packages/multimedia/gmediarender/files/gmediarender.init	2014-10-15 14:14:06.004563683 +0800
+@@ -0,0 +1,44 @@
++#!/bin/sh /etc/rc.common
++
++START=90
++STOP=10
++
++USE_PROCD=1
++PROG=/usr/bin/gmediarender
++
++start_instance()
++{
++	config_get_bool enabled "$1" 'enabled' 0
++	[ $enabled -eq 0 ] && return
++
++	config_get name "$1" 'name' 'OpenWrtRender'
++	config_get mixer "$1" 'mixer'
++	config_get mixervolume "$1" 'mixervolume'
++	config_get rendervolume "$1" 'rendervolume' '-10'
++	config_get alsadevice "$1" 'alsadevice'
++	uuid=`ip link show | awk '/ether/ {print "salt:)-" $2}' | head -1 | md5sum | awk '{print $1}'`
++
++	[ -n "$mixer" -a -n "$mixervolume" -a -x "/usr/bin/amixer" ] &&
++		/usr/bin/amixer set "$mixer" "$mixervolume" >/dev/null 2>&1
++
++	if [ -n "$alsadevice" ]; then
++		sinkparam="--gstout-audiosink=alsasink"
++		deviceparam="--gstout-audiodevice=$alsadevice"
++	fi
++
++	procd_open_instance
++	procd_set_param command "$PROG" -f "$name" -u "$uuid" --gstout-initial-volume-db=$rendervolume $sinkparam $deviceparam
++	procd_close_instance
++}
++
++start_service()
++{
++	config_load 'gmediarender'
++	config_foreach start_instance 'gmediarender'
++}
++
++service_triggers()
++{
++	procd_add_reload_trigger 'gmediarender'
++}
++
+--- /dev/null	2014-10-09 15:03:28.117439574 +0800
++++ feeds/packages/multimedia/gmediarender/files/gmediarender.hotplug	2014-10-15 13:42:49.752511946 +0800
+@@ -0,0 +1,15 @@
++case "$ACTION" in
++	add)
++		if [ -c "/dev/audio" ] &&
++			!(pgrep -f gmediarender >/dev/null 2>&1) &&
++			[ -x "/usr/bin/gmediarender" ]; then
++			/etc/init.d/gmediarender start
++		fi
++		;;
++	remove)
++		if [ ! -c "/dev/audio" ] &&
++			(pgrep -f gmediarender >/dev/null 2>&1); then
++			/etc/init.d/gmediarender stop
++		fi
++		;;
++esac
+--- /dev/null	2014-10-09 15:03:28.117439574 +0800
++++ feeds/packages/multimedia/gmediarender/Makefile	2014-10-15 11:20:44.788276874 +0800
+@@ -0,0 +1,56 @@
 +#
 +# Copyright (C) 2013 OpenWrt.org
 +#
@@ -51,13 +118,18 @@ index 0000000..696730e
 +
 +CONFIGURE_ARGS+= \
 +	--with-build-cc="$(HOSTCC)" \
-+	--prefix="\usr"
++	--prefix="/usr"
 +
 +define Package/gmediarender/install
-+	$(INSTALL_DIR) $(1)/usr/sbin
-+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/$(PKG_NAME) $(1)/usr/sbin/
++	$(INSTALL_DIR) $(1)/usr/bin
++	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/$(PKG_NAME) $(1)/usr/bin/
 +	$(INSTALL_DIR) $(1)/etc/init.d
-+	$(CP) 		   $(PKG_BUILD_DIR)/scripts/init.d/$(PKG_NAME)er $(1)/etc/init.d/$(PKG_NAME)
++	$(CP) $(PKG_BUILD_DIR)/scripts/init.d/$(PKG_NAME)er $(1)/etc/init.d/$(PKG_NAME)
++	$(INSTALL_DIR) $(1)/etc/config
++	$(CP) ./files/gmediarender.config $(1)/etc/config/gmediarender
++	$(INSTALL_BIN) ./files/gmediarender.init $(1)/etc/init.d/gmediarender
++	$(INSTALL_DIR) $(1)/etc/hotplug.d/usb
++	$(INSTALL_DATA) ./files/gmediarender.hotplug $(1)/etc/hotplug.d/usb/10-gmediarender
 +endef
 +
 +$(eval $(call BuildPackage,gmediarender))
