@@ -1,5 +1,5 @@
-diff -rNu /a/files/gmediarender.config ./feeds/packages/multimedia/gmediarender/files/gmediarender.config
---- /a/files/gmediarender.config	1970-01-01 00:00:00.000000000 +0000
+diff -rNu /dev/null ./feeds/packages/multimedia/gmediarender/files/gmediarender.config
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
 +++ ./feeds/packages/multimedia/gmediarender/files/gmediarender.config	2017-12-10 19:11:53.906652749 +0000
 @@ -0,0 +1,7 @@
 +config gmediarender 'core'
@@ -9,8 +9,8 @@ diff -rNu /a/files/gmediarender.config ./feeds/packages/multimedia/gmediarender/
 +	option mixervolume '80%'
 +	option rendervolume '-10'
 +	option alsadevice 'sysdefault'
-diff -rNu /a/files/gmediarender.hotplug ./feeds/packages/multimedia/gmediarender/files/gmediarender.hotplug
---- /a/files/gmediarender.hotplug	1970-01-01 00:00:00.000000000 +0000
+diff -rNu /dev/null ./feeds/packages/multimedia/gmediarender/files/gmediarender.hotplug
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
 +++ ./feeds/packages/multimedia/gmediarender/files/gmediarender.hotplug	2017-12-10 19:11:53.906652749 +0000
 @@ -0,0 +1,15 @@
 +case "$ACTION" in
@@ -28,8 +28,8 @@ diff -rNu /a/files/gmediarender.hotplug ./feeds/packages/multimedia/gmediarender
 +		fi
 +		;;
 +esac
-diff -rNu /a/files/gmediarender.init ./feeds/packages/multimedia/gmediarender/files/gmediarender.init
---- /a/files/gmediarender.init	1970-01-01 00:00:00.000000000 +0000
+diff -rNu /dev/null ./feeds/packages/multimedia/gmediarender/files/gmediarender.init
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
 +++ ./feeds/packages/multimedia/gmediarender/files/gmediarender.init	2017-12-10 19:11:53.906652749 +0000
 @@ -0,0 +1,44 @@
 +#!/bin/sh /etc/rc.common
@@ -76,8 +76,8 @@ diff -rNu /a/files/gmediarender.init ./feeds/packages/multimedia/gmediarender/fi
 +	procd_add_reload_trigger 'gmediarender'
 +}
 +
-diff -rNu /a/Makefile ./feeds/packages/multimedia/gmediarender/Makefile
---- /a/Makefile	1970-01-01 00:00:00.000000000 +0000
+diff -rNu /dev/null ./feeds/packages/multimedia/gmediarender/Makefile
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
 +++ ./feeds/packages/multimedia/gmediarender/Makefile	2017-12-10 20:21:36.696970102 +0000
 @@ -0,0 +1,56 @@
 +#
