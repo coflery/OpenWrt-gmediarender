@@ -109,7 +109,7 @@ diff -rNu /dev/null ./feeds/packages/multimedia/gmediarender/Makefile
 +define Package/gmediarender
 +  SECTION:=multimedia
 +  CATEGORY:=Multimedia
-+  DEPENDS:=+gstreamer +libgstreamer1 +glib2 +libupnp
++  DEPENDS:=+libgstreamer1 +glib2 +libupnp
 +  TITLE:=A Headless UPnP Renderer
 +endef
 +
