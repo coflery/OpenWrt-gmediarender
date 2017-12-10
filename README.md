@@ -28,7 +28,7 @@ Port [gmrender-resurrect-openhome](https://github.com/coflery/gmrender-resurrect
 	make package/gmediarender/install V=s
 	make package/index
 
-	//clean and compile
+###Clean and Compile
 	make package/gmediarender/{clean,compile} V=s
 
 ## TO DO
