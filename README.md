@@ -5,8 +5,8 @@ Port [gmediarender-resurrect](https://github.com/hzeller/gmrender-resurrect) to 
 ## HOW TO
 
 	cd ~
-	git clone https://github.com/JiapengLi/OpenWrt-gmediarender.git
-	cd openwrt/trunk
+	git clone https://github.com/coflery/OpenWrt-gmediarender.git
+	cd openwrt/
 	./scripts/feeds update -a
 	./scripts/feeds install -a
 	cd feeds/packages
