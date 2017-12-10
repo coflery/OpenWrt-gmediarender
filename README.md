@@ -17,6 +17,8 @@ Port [gmediarender-resurrect](https://github.com/hzeller/gmrender-resurrect) to 
 	make menuconfig
 	// choose the right platform
 	// Select gmediarender in Multimedia --> gmediarender
+	// Select gstreamer1-libs in Multimedia --> gstreamer1-libs
+	// Select gstreamer1-plugins-ugly in Multimedia --> gstreamer1-plugins-ugly
 
 ###Build Single Package
 
