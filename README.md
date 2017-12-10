@@ -17,7 +17,6 @@ Port [gmrender-resurrect-openhome](https://github.com/coflery/gmrender-resurrect
 	// Choose the right platform
 	// Select gmediarender in Multimedia --> gmediarender
 	// Select gstreamer1-libs in Multimedia --> gstreamer1-libs
-	// Select gstreamer1-plugins-ugly in Multimedia --> gstreamer1-plugins-ugly
 ###Build All
 
 	make V=s
