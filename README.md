@@ -9,7 +9,6 @@ Port [gmediarender-resurrect](https://github.com/hzeller/gmrender-resurrect) to 
 	cd openwrt/
 	./scripts/feeds update -a
 	./scripts/feeds install -a
-	cd feeds/packages
 	patch -p0 < ~/OpenWrt-gmediarender/openwrt-add-gmediarender-resurrect-package.patch
 	./scripts/feeds update -i
 	./scripts/feeds install gmediarender
