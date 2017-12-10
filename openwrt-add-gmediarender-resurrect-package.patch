@@ -96,7 +96,7 @@ diff -rNu /dev/null ./feeds/packages/multimedia/gmediarender/Makefile
 +PKG_SOURCE_PROTO:=git
 +PKG_SOURCE_URL:=git@github.com:coflery/gmrender-resurrect-openhome.git
 +PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
-+PKG_SOURCE_VERSION:=c2e64cf80406ae5faad4d386f40cc6ce32458f42
++PKG_SOURCE_VERSION:=31db81b7ec02953b553a3d0425cd7d1154b7315d
 +PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 +
 +PKG_FIXUP:=autoreconf
