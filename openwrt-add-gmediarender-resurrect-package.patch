@@ -106,7 +106,7 @@
 +define Package/gmediarender
 +  SECTION:=multimedia
 +  CATEGORY:=Multimedia
-+  DEPENDS:= +gstreamer +glib2 +libupnp
++  DEPENDS:=+gstreamer +libgstreamer +glib2 +libupnp
 +  TITLE:=A Headless UPnP Renderer
 +endef
 +
