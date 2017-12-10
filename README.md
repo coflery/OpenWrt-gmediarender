@@ -19,6 +19,9 @@ Port [gmediarender-resurrect](https://github.com/hzeller/gmrender-resurrect) to 
 	// Select gmediarender in Multimedia --> gmediarender
 	// Select gstreamer1-libs in Multimedia --> gstreamer1-libs
 	// Select gstreamer1-plugins-ugly in Multimedia --> gstreamer1-plugins-ugly
+###Build All
+
+	make V=s
 
 ###Build Single Package
 
