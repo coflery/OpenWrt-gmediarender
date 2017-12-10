@@ -14,7 +14,7 @@ Port [gmrender-resurrect-openhome](https://github.com/coflery/gmrender-resurrect
 	./scripts/feeds install gmediarender
 	
 	make menuconfig
-	// choose the right platform
+	// Choose the right platform
 	// Select gmediarender in Multimedia --> gmediarender
 	// Select gstreamer1-libs in Multimedia --> gstreamer1-libs
 	// Select gstreamer1-plugins-ugly in Multimedia --> gstreamer1-plugins-ugly
