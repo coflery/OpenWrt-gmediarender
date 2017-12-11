@@ -106,10 +106,16 @@ diff -rNu /dev/null ./feeds/packages/multimedia/gmediarender/Makefile
 +include $(INCLUDE_DIR)/package.mk
 +include $(INCLUDE_DIR)/nls.mk
 +
++GMEDIARENDER_LIBS:= \
++        libgstreamer1 \
++        glib2 \
++        libupnp \
++        libgst1net
++
 +define Package/gmediarender
 +  SECTION:=multimedia
 +  CATEGORY:=Multimedia
-+  DEPENDS:=+libgstreamer1 +glib2 +libupnp
++  DEPENDS:=$(foreach lib,$(GMEDIARENDER_LIBS),+$(lib))
 +  TITLE:=A Headless UPnP Renderer
 +endef
 +
