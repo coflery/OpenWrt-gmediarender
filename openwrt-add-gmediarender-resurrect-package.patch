@@ -127,7 +127,7 @@ diff -rNu /dev/null ./feeds/packages/multimedia/gmediarender/Makefile
 +	$(INSTALL_DIR) $(1)/usr/bin
 +	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/$(PKG_NAME) $(1)/usr/bin/
 +	$(INSTALL_DIR) $(1)/etc/init.d
-+	$(CP) $(PKG_BUILD_DIR)/scripts/init.d/$(PKG_NAME)er $(1)/etc/init.d/$(PKG_NAME)
++	#$(CP) $(PKG_BUILD_DIR)/scripts/init.d/$(PKG_NAME)er $(1)/etc/init.d/$(PKG_NAME)
 +	$(INSTALL_BIN) ./files/$(PKG_NAME).init $(1)/etc/init.d/$(PKG_NAME)
 +	$(INSTALL_DIR) $(1)/etc/config
 +	$(CP) ./files/$(PKG_NAME).config $(1)/etc/config/$(PKG_NAME)
