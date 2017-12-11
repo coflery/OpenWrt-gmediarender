@@ -1,6 +1,6 @@
 # OpenWrt-gmediarender
 
-Port [gmrender-resurrect-openhome](https://github.com/coflery/gmrender-resurrect-openhome) to OpenWrt.
+Port [gmrender-resurrect-openhome](https://github.com/coflery/gmrender-resurrect) to OpenWrt.
 
 ## HOW TO
 
