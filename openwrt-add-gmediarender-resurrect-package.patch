@@ -110,7 +110,6 @@ diff -rNu /dev/null ./feeds/packages/multimedia/gmediarender/Makefile
 +        libgstreamer1 \
 +        glib2 \
 +        libupnp \
-+        libgst1net
 +
 +define Package/gmediarender
 +  SECTION:=multimedia
