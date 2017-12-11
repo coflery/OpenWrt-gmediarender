@@ -31,7 +31,7 @@ Port [gmrender-resurrect-openhome](https://github.com/coflery/gmrender-resurrect
 
 	make package/gmediarender/{clean,compile} V=s
 	
-##Install to Openwrt
+INSTALL
 
 ###Install usb SoundCard support module
 
