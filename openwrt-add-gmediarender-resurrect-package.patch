@@ -4,7 +4,7 @@ diff -rNu /dev/null ./feeds/packages/multimedia/gmediarender/files/gmediarender.
 @@ -0,0 +1,7 @@
 +config gmediarender 'core'
 +	option enabled '1'
-+	option name 'OpenWrtRender'
++	option name 'CofleryRender'
 +	option mixer 'Speaker'
 +	option mixervolume '80%'
 +	option rendervolume '-10'
@@ -45,7 +45,7 @@ diff -rNu /dev/null ./feeds/packages/multimedia/gmediarender/files/gmediarender.
 +	config_get_bool enabled "$1" 'enabled' 0
 +	[ $enabled -eq 0 ] && return
 +
-+	config_get name "$1" 'name' 'OpenWrtRender'
++	config_get name "$1" 'name' 'CofleryRender'
 +	config_get mixer "$1" 'mixer'
 +	config_get mixervolume "$1" 'mixervolume'
 +	config_get rendervolume "$1" 'rendervolume' '-10'
