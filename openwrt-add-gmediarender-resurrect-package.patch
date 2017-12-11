@@ -79,7 +79,7 @@ diff -rNu /dev/null ./feeds/packages/multimedia/gmediarender/files/gmediarender.
 diff -rNu /dev/null ./feeds/packages/multimedia/gmediarender/Makefile
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
 +++ ./feeds/packages/multimedia/gmediarender/Makefile	2017-12-10 20:21:36.696970102 +0000
-@@ -0,0 +1,56 @@
+@@ -0,0 +1,62 @@
 +#
 +# Copyright (C) 2017 OpenWrt.org
 +#
