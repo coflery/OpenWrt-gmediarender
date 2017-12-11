@@ -90,7 +90,7 @@ diff -rNu /dev/null ./feeds/packages/multimedia/gmediarender/Makefile
 +include $(TOPDIR)/rules.mk
 +
 +PKG_NAME:=gmediarender
-+PKG_VERSION:=2013-11-28
++PKG_VERSION:=2017-11-28
 +PKG_RELEASE=$(PKG_SOURCE_VERSION)
 +
 +PKG_SOURCE_PROTO:=git
