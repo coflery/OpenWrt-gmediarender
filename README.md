@@ -17,39 +17,39 @@ Port [gmrender-resurrect-openhome](https://github.com/coflery/gmrender-resurrect
 	// Choose the right platform
 	// Select gmediarender in Multimedia --> gmediarender
 	// Select gstreamer1-libs in Multimedia --> gstreamer1-libs
-###Build All
+Build All
 
 	make V=s
 
-###Build Single Package
+Build Single Package
 
 	make package/gmediarender/compile V=s
 	make package/gmediarender/install V=s
 	make package/index
 
-###Clean and Compile
+Clean and Compile
 
 	make package/gmediarender/{clean,compile} V=s
 	
 ## INSTALL
 
-###Install usb SoundCard support module
+Install usb SoundCard support module
 
 	opkg install kmod-input-core
 	opkg install kmod-sound-core
 	opkg install kmod-usb-audio
 	
-###Reboot router let set enable
+Reboot router let set enable
 
 	reboot
 
-###Install gstreamer's format lib
+Install gstreamer's format lib
 
 	opkg install gst1-plugins-base
 	opkg install gst1-plugins-good
 	opkg install gst1-plugins-ugly
 
-###Enable gmediarender service
+Enable gmediarender service
 
 	/etc/init.d/gmediarender enable
 	/etc/init.d/gmediarender start
