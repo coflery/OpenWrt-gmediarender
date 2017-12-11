@@ -2,7 +2,7 @@
 
 Port [gmrender-resurrect-openhome](https://github.com/coflery/gmrender-resurrect) to OpenWrt.
 
-## HOW TO
+## DOWNLOAD & COMPILE
 
 	cd ~
 	git clone https://github.com/coflery/OpenWrt-gmediarender.git
